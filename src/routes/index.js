@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { DetailsPage } from '../pages/DetailsPage';
-import { ProductPage } from '../pages/ProductPage';
+import { DetailsPage } from '../pages/Details';
+import { ProductPage } from '../pages/Products';
 
 import Route from './Route';
 

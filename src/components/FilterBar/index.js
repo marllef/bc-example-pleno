@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import colors from '../../utils/colors';
 import { Divider } from '../Divider';
 import { FilterField } from '../FilterField';
-import { Input } from '../Input';
 import { List } from '../List';
 import { CategoryItem } from './CategoryItem';
 import { Container, Label, Paper } from './styled';
@@ -22,7 +19,7 @@ export const FilterBar = ({ categories, onFilter = () => {} }) => {
 
   useEffect(() => {
     onFilter({ name: (filter || '').toLowerCase(), selected });
-  }, [selected, filter]);
+  }, [selected, filter, onFilter]);
 
   return (
     <Container>

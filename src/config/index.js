@@ -1,3 +1,4 @@
 export const configs = {
-  AuthToken: process.env.REACT_APP_AUTH_TOKEN,
+  AUTH_TOKEN: process.env.REACT_APP_AUTH_TOKEN,
+  API_HOST: process.env.REACT_APP_API_HOST
 };
