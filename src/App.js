@@ -17,6 +17,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <Router history={history}>

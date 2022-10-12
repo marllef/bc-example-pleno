@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../../utils/colors';
 
 export const Container = styled.div`
   display: flex;
@@ -25,10 +26,11 @@ export const Brand = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
 
   font-style: italic;
 
   b {
-    color: #0ea5e9;
+    color: ${colors.emerald[500]};
   }
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { HomePage } from '../pages/HomePage';
+import { DetailsPage } from '../pages/DetailsPage';
+import { ProductPage } from '../pages/ProductPage';
 
 import Route from './Route';
 
@@ -8,7 +9,8 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-         <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={ProductPage} />
+        <Route exact path="/:id" component={DetailsPage} />
       </Switch>
     </BrowserRouter>
   );

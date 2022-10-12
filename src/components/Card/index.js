@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { BRL } from '../../utils/currency';
 import {
   Container,
@@ -11,7 +12,8 @@ import {
   Title,
 } from './styled';
 
-export const Card = ({ image, price, title = '', description }) => {
+export const Card = ({ id, image, price, title = '', description }) => {
+  const history = useHistory();
   return (
     <Container>
       <Image src={image} />
@@ -21,7 +23,7 @@ export const Card = ({ image, price, title = '', description }) => {
         <Description>{description?.substring(0, 120)}</Description>
       </Content>
       <Info>
-        <More>Ver Detalhes</More>
+        <More onClick={() => history.push(`/${id}`)}>Ver Detalhes</More>
       </Info>
     </Container>
   );

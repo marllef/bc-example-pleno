@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../../utils/colors';
 
 export const Container = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ export const Container = styled.div`
   max-height: 19rem;
   border-radius: 5px;
   border: 1px solid #e2e8f0;
+  background-color: ${colors.slate[50]};
   overflow: hidden;
 `;
 
@@ -46,7 +48,12 @@ export const Content = styled.div`
   padding: 0 0.5rem;
 `;
 
-
+export const Divider = styled.div`
+  margin: 0.1rem 0;
+  height: 1px;
+  background-color: #e2e8f0;
+  width: 100%;
+`;
 
 export const Price = styled.div`
   position: absolute;
@@ -85,5 +92,6 @@ export const Info = styled.div`
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
+  border-top: 1px solid ${colors.slate[200]};
   background-color: #f1f5f9;
 `;

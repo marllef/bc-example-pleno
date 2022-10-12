@@ -6,12 +6,14 @@ import { FilterBar } from '../components/FilterBar';
 import { HeaderBar } from '../components/HeaderBar';
 import { List } from '../components/List';
 import { api } from '../services/api';
+import colors from '../utils/colors';
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  background-color: ${colors.slate[100]};
 `;
 
 const Main = styled.main`
@@ -21,7 +23,7 @@ const Main = styled.main`
   overflow: hidden;
 `;
 
-export const HomePage = () => {
+export const ProductPage = () => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
@@ -29,19 +31,16 @@ export const HomePage = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await api.get('/products', {
-        headers: {
-          'auth-token': 'SecretAuthToken',
-        },
-      });
+      const response = await api.get('/products');
 
-      const mCategories = [
-        ...new Set(response.data.map((item) => item.category)),
-      ];
+      const products = response.data;
+
+      // Filtra as categorias e evita duplicidade
+      const mCategories = [...new Set(products.map((item) => item.category))];
 
       setCategories(mCategories);
 
-      setData(response.data);
+      setData(products);
     };
 
     getData().catch(console.err);
@@ -53,9 +52,9 @@ export const HomePage = () => {
       <Main>
         <FilterBar
           categories={categories}
-          onFilter={(filtered) => {
-            setNameFilter(filtered.name);
-            setSelected(filtered.selected);
+          onFilter={({ name, selected }) => {
+            setNameFilter(name);
+            setSelected(selected);
           }}
         />
 

@@ -29,6 +29,7 @@ export const List = ({ data, render, type = 'row' }) => {
       return (
         <li key={item.id}>
           <Card
+            id={item.id}
             title={item.name}
             description={item.description}
             price={item.price}
