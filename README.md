@@ -6,9 +6,9 @@ Para podermos proseguir com o processo de avaliação, estamos disponibilizando 
 
 ### **Orientações iniciais**
 
-O teste proposto será bem simples, porém por sermos uma startup, além das habilidades técnicas é muito importante a comunicação e pesquisa por soluções de problemas. Tenha isso em mente ao resolvê-lo. 
+O teste proposto será bem simples, porém por sermos uma startup, além das habilidades técnicas é muito importante a comunicação e pesquisa por soluções de problemas. Tenha isso em mente ao resolvê-lo.
 
-O teste é composto por três exercicios, é importante **fazer os três**. 
+O teste é composto por três exercicios, é importante **fazer os três**.
 
 O uso de requisitos e os diferenciais listados na vaga será considerado um bônus.
 
@@ -21,7 +21,7 @@ O desenvolvimento deverá ser **feito em ReactJS e NodeJS (com Adonis)**. O proj
 - axios
 - styled-components
 
-Esses outros packages a seguir também são obrigatórios, porém já estão implementados a arquitetura de seu uso, fique vontade para incrementar o que achar necessário e pertinente. 
+Esses outros packages a seguir também são obrigatórios, porém já estão implementados a arquitetura de seu uso, fique vontade para incrementar o que achar necessário e pertinente.
 
 - immer
 - react-router-dom
@@ -65,5 +65,13 @@ Para prosseguir faça um Fork do projeto: https://github.com/BomCupom/bc-example
 Responda as perguntas abaixo com suas próprias palavras, mas também fique livre em aplicar algum desses conceitos na primeira parte do teste.
 
 - Se uma rota é repetida diversas vezes em sua aplicação, como seria possível melhorar a arquitetura para facilitar em manutenções posteriores?
+
+  Para facilitar a manutenção e evitar repetições de código que as vezes são desnecessárias pode-se utilizar conceitos de Clean Code. O nome de uma variável, função, classe ou rota bem planejado pode auxiliar no processo de refatoração além de deixar mais clara e objetiva a leitura do código. No caso de rotas estáticas que se repetem muitas vezes pela aplicação pode-se criar um "constant string" para modularizar as chaves que identificam a rota, identificando-a com uma constante. Dessa forma, caso tenha a necessidade de fazer alterações será facil de encontrar, já que com o Clean Code o nome foi bem planejado para que seja pesquisável. Além disso, existem abordagens de roteamento que diminuem as chances de se ter rotas complexas com muitas repetições, como é o caso da abordagem "File System Routing", onde se utiliza a própria estrutura de arquivos e pastas do projeto para criação das rotas.
+
 - É possível melhorar a performance da solução? Como as melhorias impactam a leitura e manutenção do código?
+
+  Sim, sempre é possivel melhorar! O projeto pode ser melhorado de diversas formas, principalmente se utilizando os conceitos de Clean Code para refatorar sempre que possível algum trecho do código deixando-o modular. Além disso, para melhorar o desempenho e disponibilidade da aplicação pode-se utilizar abordagens de Cacheamento, Server-Side Rendering e Static Site Generation. Dessa forma, a aplicação teria um bom ganho de perfomance, além de ter o código sempre legível, funcionando e melhorado após as refatorações.
+
 - De que forma o sistema pode escalar com a arquitetura planejada?
+
+  Deixando o sistema modular, é possivel utilizar uma arquitetura baseada em MicroServiços, possibilitando a escalabilidade do sistema. Além disso, pode-se utilizar serviços como a Kubernetes para automatizar a implantação de novas instancias caso a demanda seja muito alta, garantindo sua disponibilidade.
